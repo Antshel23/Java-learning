@@ -6,7 +6,7 @@ public class vars_datatypes {
     int myAge = 22;
     char firstInitial = 'A';
     boolean isHuman = true;
-    double ageAsDouble = 22.722d;
+    double ageAsDouble = 22.723d;
 
     //logical operators (+ - * / % ++ -- <> && ||) and boolean/math methods 
     int sum = 0;
