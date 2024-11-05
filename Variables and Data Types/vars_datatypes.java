@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class vars_datatypes {
     public static void main(String[] args) {
 
@@ -33,5 +35,14 @@ public class vars_datatypes {
     System.out.println(myName.indexOf('n')); // 1
     System.out.println("Name: " + myName + " Age: " + myAge + " First Initial: " 
     + firstInitial + " Is Human?: " + isHuman + " Age as Double: " + ageAsDouble); //concats
-    }
+    
+
+
+    //arrays
+    String[] shapes = {"Circle", "Triangle", "Square"};
+    System.out.println(shapes);
+    System.out.println(Arrays.toString(shapes));
+    System.out.println(shapes[1]);
+    shapes[1] = "Rectangle";
+}
 }

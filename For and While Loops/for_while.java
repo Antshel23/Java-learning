@@ -23,6 +23,11 @@ public class for_while {
         for (String shape : shapes) {
             System.out.println(shape);
         }
+        
+        for (int s = 0; s < shapes.length; s++) {
+            System.out.println(shapes[s]);
+        }
+    
 
         for (int a = 0; a < 10; a++) {
             if (a == 4) {
