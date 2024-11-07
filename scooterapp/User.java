@@ -21,20 +21,20 @@ public User(String username, String password, int age) {
     System.out.println("User: " + this.username + " created successfully" );
 }
 
-public void login(String password) {
-    if (password.equals(this.password)) {
-        this.loginStatus = true;
-        System.out.println("User: " + this.username + " has logged in" );
-    }
-    else {
-        System.err.println("ERROR: Incorrect password, try again");
-        return;
-    }
+public String getUsername() {
+    return username;
 }
 
-public void logout() {
-    this.loginStatus = false;
-    System.out.println("User: " + this.username + " has logged out" );
+public String getPassword() {
+    return password;
+}
+
+public Boolean getloginStatus() {
+    return loginStatus;
+}
+
+public int getAge() {
+    return age;
 }
 
 }

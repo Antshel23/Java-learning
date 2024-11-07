@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class App {
 
-public static Map<String, Integer> stations;
-public static ArrayList<String> registeredUsers;
+static Map<String, Integer> stations;
+static ArrayList<String> registeredUsers;
 
 public App() {
     stations = new HashMap<>();
@@ -17,5 +17,15 @@ public App() {
     registeredUsers = new ArrayList<String>();
 }
 
+public void registerUser(String username, String password, int age) {
+    User newUser = new User(username, password, age);
+}
+
+public void createScooter(String station) {
+    Scooter newScooter = new Scooter(station);
+}
+
+
 
 }
+
