@@ -9,9 +9,7 @@ public class Main {
         app1.createScooter("Kings Cross");
         app1.createScooter("St Pancras");
         app1.loginUser("Ant1", "password1");
-        
-
-
+        app1.rentScooter("Kings Cross", "Ant1");
         app1.logoutUser("Ant1");
     }
 }

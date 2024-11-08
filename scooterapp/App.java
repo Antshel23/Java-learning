@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class App {
 
-static Map<String, List<Integer>> stations;
+static Map<String, List<Scooter>> stations;
 static Map<Integer, Scooter> scooters;
 static ArrayList<User> registeredUsers;
 
@@ -36,7 +36,6 @@ public void loginUser(String username, String password) {
 }
 
 public void logoutUser(String username) {
-//if username exists in registeredUsers and loginStatus = true
 for (User user : registeredUsers) {
     if (user.getUsername().equals(username) && user.getloginStatus() == true) {
         user.setLoginStatus();
@@ -56,12 +55,20 @@ public void createScooter(String station) {
 
 public void rentScooter(String station, String username) {
     //if station exists in station, if station != empty, setscooterusernull, setstationnull, remove serial from stations
-   // if (stations.containsKey(station) && !stations.get(station).isEmpty()) {
-        //for (User user : registeredUsers) {
-            //if (user.getUsername().equals(username) && user.getloginStatus() == true) {
-
-           // }
-    //}
+   if (stations.containsKey(station) && stations.get(station) != null) {
+        for (User user : registeredUsers) {
+            if (user.getUsername().equals(username) && user.getloginStatus() == true) {
+                Scooter scooterChosen = stations.get(station).get(0);
+                scooterChosen.setScooterUser(user);
+                scooterChosen.setStationNull();
+                stations.get(station).remove(scooterChosen);
+                System.out.println("Scooter: " + scooterChosen.getSerial() + " rented from: " + station);
+            }
+        }
+    }   
+    else {
+        System.err.println("ERROR: Scooter not available. Try again later.");
+    }
 }
 
 public void dockScooter(String station, String username) {

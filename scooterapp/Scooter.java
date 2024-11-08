@@ -12,7 +12,8 @@ public Scooter(String station) {
     this.station = station;
     this.serial = nextSerial;
     nextSerial++;
-    App.stations.get(station).add(this.serial);
+    App.stations.get(station).add(this);
+    App.scooters.put(this.serial, this);
     System.out.println("Scooter: " + this.serial + " added at station: " + this.station);
     }
     else {
@@ -35,7 +36,7 @@ public int getSerial() {
 public void setStation(String station) {
     if (this.station == null) {
         this.station = station;
-        App.stations.get(station).add(this.serial);
+        App.stations.get(station).add(this);
     }
 }
 
