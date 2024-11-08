@@ -3,7 +3,7 @@ package scooterapp;
 public class Scooter {
 
 private String station;
-private String scooterUser;
+private User scooterUser;
 private int serial;
 static int nextSerial = 1;
 
@@ -24,7 +24,7 @@ public String getStation() {
     return station;
 }
 
-public String getScooterUser() {
+public User getScooterUser() {
     return scooterUser;
 }
 
@@ -32,12 +32,20 @@ public int getSerial() {
     return serial;
 }
 
-public void setStation() {
-
+public void setStation(String station) {
+    if (this.station == null) {
+        this.station = station;
+    }
 }
 
-public void setScooterUser() {
-    
+public void setStationNull() {
+    if (this.station != null) {
+        this.station = null;
+    }
+}
+
+public void setScooterUser(User scooterUser) {
+
 }
 
 

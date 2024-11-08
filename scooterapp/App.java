@@ -22,9 +22,8 @@ public void registerUser(String username, String password, int age) {
 }
 
 public void loginUser(String username, String password) {
-// if username exists in registeredUsers, and password = user[x].getPassword() & loginStatus = false
     for (User user : registeredUsers) {
-        if (user.getUsername().equals(username) && user.getPassword().equals(password) && user.getloginStatus().equals(false)) {
+        if (user.getUsername().equals(username) && user.getPassword().equals(password) && user.getloginStatus() == false) {
             user.setLoginStatus();
             System.out.println(username + " has logged in");
         }
@@ -32,11 +31,19 @@ public void loginUser(String username, String password) {
             System.err.println("ERROR: Login failed, please try again");
         }
     }
-
 }
 
 public void logoutUser(String username) {
 //if username exists in registeredUsers and loginStatus = true
+for (User user : registeredUsers) {
+    if (user.getUsername().equals(username) && user.getloginStatus() == true) {
+        user.setLoginStatus();
+        System.out.println(username + " has logged out");
+    }
+    else {
+        System.err.println("ERROR: Logout failed, please try again");
+    }
+}
 }
 
 public void createScooter(String station) {

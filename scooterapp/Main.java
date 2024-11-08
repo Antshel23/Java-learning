@@ -7,7 +7,12 @@ public class Main {
         app1.createScooter("Kings Cross");
         app1.createScooter("Euston");
         app1.createScooter("Kings Cross");
+        app1.createScooter("St Pancras");
         app1.loginUser("Ant1", "password1");
+
+
+        
+        app1.logoutUser("Ant1");
         System.out.println(app1.registeredUsers);
         System.out.println(app1.stations);
     }
