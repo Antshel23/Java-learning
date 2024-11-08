@@ -33,8 +33,4 @@ public Boolean getloginStatus() {
     return loginStatus;
 }
 
-public int getAge() {
-    return age;
-}
-
 }
