@@ -4,18 +4,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
 
-
 public class App {
 
 static Map<String, List<Integer>> stations;
-static ArrayList<String> registeredUsers;
+static ArrayList<User> registeredUsers;
 
 public App() {
     stations = new HashMap<>();
     stations.put("Kings Cross", new ArrayList<>());
     stations.put("Euston", new ArrayList<>());
     stations.put("St Pancras", new ArrayList<>());
-    registeredUsers = new ArrayList<String>();
+    registeredUsers = new ArrayList<User>();
 }
 
 public void registerUser(String username, String password, int age) {
@@ -24,6 +23,12 @@ public void registerUser(String username, String password, int age) {
 
 public void loginUser(String username, String password) {
 // if username exists in registeredUsers, and password = user[x].getPassword() & loginStatus = false
+    for (User user : registeredUsers) {
+        if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+
+        }
+    }
+
 }
 
 public void logoutUser(String username) {
@@ -34,12 +39,12 @@ public void createScooter(String station) {
     Scooter newScooter = new Scooter(station);
 }
 
-public void dockScooter(String station, Scooter scooter) {
-    //if station exists in stations, scooter exists in scooter list
+public void dockScooter(String station) {
+    //if station exists in stations, if user has scooter
 }
 
-public void rentScooter(Scooter scooter) {
-
+public void rentScooter(String station) {
+    //if station exists in station, if station != empty
 }
 }
 

@@ -9,6 +9,5 @@ public class Main {
         app1.createScooter("Kings Cross");
         System.out.println(app1.registeredUsers);
         System.out.println(app1.stations);
-
     }
 }

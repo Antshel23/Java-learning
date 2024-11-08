@@ -17,7 +17,7 @@ public User(String username, String password, int age) {
         System.err.println("ERROR: Minimum age: 18");
     return;
     }
-    App.registeredUsers.add(username);
+    App.registeredUsers.add(this);
     System.out.println("User: " + this.username + " created successfully" );
 }
 
