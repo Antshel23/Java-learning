@@ -54,7 +54,6 @@ public void createScooter(String station) {
 
 
 public void rentScooter(String station, String username) {
-    //if station exists in station, if station != empty, setscooterusernull, setstationnull, remove serial from stations
    if (stations.containsKey(station) && stations.get(station) != null) {
         for (User user : registeredUsers) {
             if (user.getUsername().equals(username) && user.getloginStatus() == true) {
@@ -62,7 +61,7 @@ public void rentScooter(String station, String username) {
                 scooterChosen.setScooterUser(user);
                 scooterChosen.setStationNull();
                 stations.get(station).remove(scooterChosen);
-                System.out.println("Scooter: " + scooterChosen.getSerial() + " rented from: " + station);
+                System.out.println("User: " + username + " has rented Scooter: " + scooterChosen.getSerial() + " from: " + station);
             }
         }
     }   
@@ -72,8 +71,19 @@ public void rentScooter(String station, String username) {
 }
 
 public void dockScooter(String station, String username) {
-    //if station exists in stations, if user has scooter
-    
+if (stations.containsKey(station)) {
+    for (Scooter scooter : scooters.values()) {
+        if (scooter.getScooterUser() != null && scooter.getScooterUser().getUsername().equals(username) && scooter.getScooterUser().getloginStatus().equals(true)) {
+            stations.get(station).add(scooter);
+            scooter.setScooterUser(scooter.getScooterUser());
+            scooter.setStation(station);
+            System.out.println("User: " + username + " has docked Scooter: " + scooter.getSerial() + " at: " + station);
+        }
+    }
+}
+    else {
+        System.err.println("ERROR: Docking not available. Try again later.");
+    }
 }
 }
 

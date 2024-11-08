@@ -36,7 +36,6 @@ public int getSerial() {
 public void setStation(String station) {
     if (this.station == null) {
         this.station = station;
-        App.stations.get(station).add(this);
     }
 }
 
