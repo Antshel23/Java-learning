@@ -12,7 +12,7 @@ public Scooter(String station) {
     this.station = station;
     this.serial = nextSerial;
     nextSerial++;
-    App.stations.compute(station, (key, value) -> value+1);
+    App.stations.get(station).add(this.serial);
     System.out.println("Scooter: " + this.serial + " added at station: " + this.station);
     }
     else {
