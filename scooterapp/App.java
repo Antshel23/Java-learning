@@ -20,7 +20,7 @@ public App() {
 }
 
 public void registerUser(String username, String password, int age) {
-    User newUser = new User(username, password, age);
+    new User(username, password, age);
 }
 
 public void loginUser(String username, String password) {
