@@ -35,6 +35,7 @@ public int getSerial() {
 public void setStation(String station) {
     if (this.station == null) {
         this.station = station;
+        App.stations.get(station).add(this.serial);
     }
 }
 
@@ -45,8 +46,15 @@ public void setStationNull() {
 }
 
 public void setScooterUser(User scooterUser) {
-
+if (this.scooterUser == null) {
+    this.scooterUser = scooterUser;
+}
 }
 
+public void setScooterUserNull(User scootUser) {
+    if (this.scooterUser != null) {
+        this.scooterUser = null;
+    }
+}
 
 }

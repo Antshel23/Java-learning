@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class App {
 
 static Map<String, List<Integer>> stations;
+static Map<Integer, Scooter> scooters;
 static ArrayList<User> registeredUsers;
 
 public App() {
@@ -15,6 +16,7 @@ public App() {
     stations.put("Euston", new ArrayList<>());
     stations.put("St Pancras", new ArrayList<>());
     registeredUsers = new ArrayList<User>();
+    scooters = new HashMap<>();
 }
 
 public void registerUser(String username, String password, int age) {
@@ -48,14 +50,23 @@ for (User user : registeredUsers) {
 
 public void createScooter(String station) {
     Scooter newScooter = new Scooter(station);
+    scooters.put(newScooter.getSerial(), newScooter);
 }
 
-public void dockScooter(String station) {
+
+public void rentScooter(String station, String username) {
+    //if station exists in station, if station != empty, setscooterusernull, setstationnull, remove serial from stations
+   // if (stations.containsKey(station) && !stations.get(station).isEmpty()) {
+        //for (User user : registeredUsers) {
+            //if (user.getUsername().equals(username) && user.getloginStatus() == true) {
+
+           // }
+    //}
+}
+
+public void dockScooter(String station, String username) {
     //if station exists in stations, if user has scooter
-}
-
-public void rentScooter(String station) {
-    //if station exists in station, if station != empty
+    
 }
 }
 
