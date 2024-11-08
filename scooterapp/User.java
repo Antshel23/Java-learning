@@ -33,4 +33,12 @@ public Boolean getloginStatus() {
     return loginStatus;
 }
 
+public void setLoginStatus() {
+    if (this.loginStatus.equals(true)) {
+        this.loginStatus = false;
+    }
+    else {
+        this.loginStatus = true;
+    }
+}
 }

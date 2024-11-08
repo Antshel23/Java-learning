@@ -24,8 +24,12 @@ public void registerUser(String username, String password, int age) {
 public void loginUser(String username, String password) {
 // if username exists in registeredUsers, and password = user[x].getPassword() & loginStatus = false
     for (User user : registeredUsers) {
-        if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-
+        if (user.getUsername().equals(username) && user.getPassword().equals(password) && user.getloginStatus().equals(false)) {
+            user.setLoginStatus();
+            System.out.println(username + " has logged in");
+        }
+        else {
+            System.err.println("ERROR: Login failed, please try again");
         }
     }
 

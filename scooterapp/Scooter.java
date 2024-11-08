@@ -32,6 +32,13 @@ public int getSerial() {
     return serial;
 }
 
+public void setStation() {
+
+}
+
+public void setScooterUser() {
+    
+}
 
 
 }
