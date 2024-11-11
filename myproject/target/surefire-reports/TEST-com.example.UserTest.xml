@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.UserTest" time="0.158" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.UserTest" time="0.165" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/as/Java learning/myproject/target/surefire/surefirebooter-20241111145659659_3.jar /Users/as/Java learning/myproject/target/surefire 2024-11-11T14-56-59_433-jvmRun1 surefire-20241111145659659_1tmp surefire_0-20241111145659659_2tmp"/>
+    <property name="sun.java.command" value="/Users/as/Java learning/myproject/target/surefire/surefirebooter-20241111153656434_3.jar /Users/as/Java learning/myproject/target/surefire 2024-11-11T15-36-56_251-jvmRun1 surefire-20241111153656434_1tmp surefire_0-20241111153656434_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/as/Java learning/myproject/target/test-classes:/Users/as/Java learning/myproject/target/classes:/Users/as/.m2/repository/junit/junit/4.13/junit-4.13.jar:/Users/as/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/as/Java learning/myproject/target/surefire/surefirebooter-20241111145659659_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/as/Java learning/myproject/target/surefire/surefirebooter-20241111153656434_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="17.0.12+7"/>
@@ -55,12 +55,21 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testAgeVerification" classname="com.example.UserTest" time="0.018">
+  <testcase name="testAgeVerification" classname="com.example.UserTest" time="0.022">
     <system-err><![CDATA[Minimum age: 18 required for registration.
 ]]></system-err>
   </testcase>
-  <testcase name="testRegisterUser" classname="com.example.UserTest" time="0.001">
+  <testcase name="testRegisterUser" classname="com.example.UserTest" time="0.002">
     <system-out><![CDATA[User: Ant1 created successfully
+]]></system-out>
+  </testcase>
+  <testcase name="testRentScooter" classname="com.example.UserTest" time="0.001">
+    <system-out><![CDATA[User: Ant1 created successfully
+Ant1 has logged in
+Scooter: 1 added at station: Kings Cross
+Scooter: 2 added at station: Kings Cross
+Scooter: 3 added at station: Euston
+User: Ant1 has rented Scooter: 1 from: Kings Cross
 ]]></system-out>
   </testcase>
   <testcase name="testLoginLogoutUser" classname="com.example.UserTest" time="0.001">
@@ -69,10 +78,13 @@ Ant1 has logged in
 Ant1 has logged out
 ]]></system-out>
   </testcase>
-  <testcase name="testCreateScooter" classname="com.example.UserTest" time="0.002">
+  <testcase name="testCreateScooter" classname="com.example.UserTest" time="0.0">
     <system-out><![CDATA[Scooter: 1 added at station: Kings Cross
 Scooter: 2 added at station: Kings Cross
 Scooter: 3 added at station: Euston
+{1=com.example.Scooter@78047b92, 2=com.example.Scooter@8909f18, 3=com.example.Scooter@79ca92b9}
+com.example.Scooter@78047b92
+1
 ]]></system-out>
   </testcase>
 </testsuite>

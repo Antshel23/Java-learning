@@ -17,6 +17,7 @@ public App() {
     stations.put("St Pancras", new ArrayList<>());
     registeredUsers = new ArrayList<User>();
     scooters = new HashMap<>();
+    Scooter.nextSerial = 1;
 }
 
 public void registerUser(String username, String password, int age) {
@@ -55,8 +56,13 @@ for (User user : registeredUsers) {
 }
 
 public void createScooter(String station) {
+    if (!stations.containsKey(station)) {
+        throw new IllegalArgumentException("Station does not exist.");
+    }
     Scooter newScooter = new Scooter(station);
-    scooters.put(newScooter.getSerial(), newScooter);
+    App.scooters.put(newScooter.getSerial(), newScooter);
+    App.stations.get(station).add(newScooter);
+
 }
 
 

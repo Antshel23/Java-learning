@@ -8,29 +8,21 @@ private int serial;
 static int nextSerial = 1;
 
 public Scooter(String station) {
-    if (App.stations.containsKey(station)) {
     this.station = station;
-    this.serial = nextSerial;
-    nextSerial++;
-    App.stations.get(station).add(this);
-    App.scooters.put(this.serial, this);
+    this.serial = nextSerial++;
     System.out.println("Scooter: " + this.serial + " added at station: " + this.station);
-    }
-    else {
-        throw new IllegalArgumentException("Station does not exist");
-    }
 }
 
 public String getStation() {
-    return station;
+    return this.station;
 }
 
 public User getScooterUser() {
-    return scooterUser;
+    return this.scooterUser;
 }
 
 public int getSerial() {
-    return serial;
+    return this.serial;
 }
 
 public void setStation(String station) {

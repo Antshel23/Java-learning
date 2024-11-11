@@ -20,27 +20,22 @@ public User(String username, String password, int age) {
 }
 
 public String getUsername() {
-    return username;
+    return this.username;
 }
 
 public String getPassword() {
-    return password;
+    return this.password;
 }
 
 public int getAge() {
-    return age;
+    return this.age;
 }
 
 public Boolean getloginStatus() {
-    return loginStatus;
+    return this.loginStatus;
 }
 
 public void setLoginStatus() {
-    if (this.loginStatus.equals(true)) {
-        this.loginStatus = false;
-    }
-    else {
-        this.loginStatus = true;
-    }
+    this.loginStatus = !this.loginStatus;
 }
 }
