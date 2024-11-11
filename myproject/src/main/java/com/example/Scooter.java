@@ -1,4 +1,4 @@
-package scooterapp;
+package myproject.src.main.java.com.example;
 
 public class Scooter {
 

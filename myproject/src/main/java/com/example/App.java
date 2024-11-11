@@ -1,4 +1,4 @@
-package scooterapp;
+package myproject.src.main.java.com.example;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
