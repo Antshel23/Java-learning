@@ -1,4 +1,4 @@
-package myproject.src.main.java.com.example;
+package com.example;
 
 public class User {
 

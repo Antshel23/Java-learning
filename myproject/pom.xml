@@ -30,7 +30,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Main-Class>myproject/src/main/java/com/example/Main</Main-Class>
+                            <Main-Class>com.example.Main</Main-Class>
                         </manifestEntries>
                     </archive>
                 </configuration>
