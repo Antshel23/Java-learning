@@ -17,7 +17,7 @@ public Scooter(String station) {
     System.out.println("Scooter: " + this.serial + " added at station: " + this.station);
     }
     else {
-        System.err.println("ERROR: Station does not exist");
+        throw new IllegalArgumentException("Station does not exist");
     }
 }
 

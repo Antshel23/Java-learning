@@ -20,7 +20,14 @@ public App() {
 }
 
 public void registerUser(String username, String password, int age) {
-    new User(username, password, age);
+    try {
+        User newUser = new User(username, password, age);
+        App.registeredUsers.add(newUser);
+    }
+    catch (IllegalArgumentException e) {
+        System.err.println(e.getMessage());
+        throw e;
+    }
 }
 
 public void loginUser(String username, String password) {
@@ -30,7 +37,7 @@ public void loginUser(String username, String password) {
             System.out.println(username + " has logged in");
         }
         else {
-            System.err.println("ERROR: Login failed, please try again");
+            throw new IllegalArgumentException("Login failed, please try again");
         }
     }
 }
@@ -42,7 +49,7 @@ for (User user : registeredUsers) {
         System.out.println(username + " has logged out");
     }
     else {
-        System.err.println("ERROR: Logout failed, please try again");
+        throw new IllegalArgumentException("Logout failed, please try again");
     }
 }
 }
@@ -66,7 +73,7 @@ public void rentScooter(String station, String username) {
         }
     }   
     else {
-        System.err.println("ERROR: Scooter not available. Try again later.");
+        throw new IllegalArgumentException("Scooter not available. Try again later.");
     }
 }
 
@@ -82,7 +89,7 @@ if (stations.containsKey(station)) {
     }
 }
     else {
-        System.err.println("ERROR: Docking not available. Try again later.");
+        throw new IllegalArgumentException("Docking not available. Try again later.");
     }
 }
 }
