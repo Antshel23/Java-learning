@@ -88,7 +88,7 @@ if (stations.containsKey(station)) {
     for (Scooter scooter : scooters.values()) {
         if (scooter.getScooterUser() != null && scooter.getScooterUser().getUsername().equals(username) && scooter.getScooterUser().getloginStatus().equals(true)) {
             stations.get(station).add(scooter);
-            scooter.setScooterUser(scooter.getScooterUser());
+            scooter.setScooterUserNull(scooter.getScooterUser());
             scooter.setStation(station);
             System.out.println("User: " + username + " has docked Scooter: " + scooter.getSerial() + " at: " + station);
         }

@@ -43,17 +43,14 @@ public class UserTest {
         App app4 = new App();
         app4.createScooter("Kings Cross");
         app4.createScooter("Kings Cross");
-
         assertEquals(2,app4.stations.get("Kings Cross").size());
         app4.createScooter("Euston");
         assertEquals(1,app4.stations.get("Euston").size());
-
         Scooter serial1 = app4.scooters.get(1);
         Scooter serial2 = app4.scooters.get(2);
         System.out.println(app4.scooters);
         System.out.println(serial1);
         System.out.println(serial1.getSerial());
-
         assertEquals(1, serial1.getSerial());
         assertEquals(2, serial2.getSerial());
     }
@@ -67,7 +64,6 @@ public class UserTest {
         app5.createScooter("Kings Cross");
         assertEquals(2,app5.stations.get("Kings Cross").size());
         app5.createScooter("Euston");
-
         Scooter serialTest = app5.scooters.get(1);
         assertEquals("Kings Cross", serialTest.getStation());
         app5.rentScooter("Kings Cross", "Ant1");
@@ -76,6 +72,19 @@ public class UserTest {
         assertNotNull(serialTest.getScooterUser());
     }
 
+    @Test
+    public void testDockScooter() {
+        App app6 = new App();
+        app6.registerUser("Ant1", "password1", 22);
+        app6.loginUser("Ant1", "password1");
+        app6.createScooter("Kings Cross");
+        Scooter stationTest = app6.scooters.get(1);
+        app6.rentScooter("Kings Cross", "Ant1");
+        assertNull(stationTest.getStation());
+        app6.dockScooter("Euston", "Ant1");
+        assertEquals("Euston", stationTest.getStation());
+        assertNull(stationTest.getScooterUser());
+}
 }
 
 
