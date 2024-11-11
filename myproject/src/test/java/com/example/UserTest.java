@@ -38,6 +38,23 @@ public class UserTest {
         assertFalse(test1.getloginStatus());
     }
 
+    @Test
+    public void testCreateScooter() {
+        App app1 = new App();
+        app1.createScooter("Kings Cross");
+        app1.createScooter("Kings Cross");
+
+        assertEquals(2,app1.stations.get("Kings Cross").size());
+        app1.createScooter("Euston");
+        assertEquals(1,app1.stations.get("Euston").size());
+
+        Scooter serial1 = app1.scooters.get(1);
+        Scooter serial2 = app1.scooters.get(2);
+
+        assertEquals(1, serial1.getSerial());
+        assertEquals(2, serial2.getSerial());
+    }
+
 }
 
 
